@@ -66,7 +66,7 @@ class DetailViewController: UIViewController {
             
             let boldTypeText = "Type:"
             let attributedTypeString = NSMutableAttributedString(string:boldTypeText, attributes:attrs)
-            let typeString = NSMutableAttributedString(string:"\t \(pokemonDetails?.types.map { $0.type.name }.joined(separator: ", ") ?? "")")
+            let typeString = NSMutableAttributedString(string:"\t \(pokemonDetails?.types.map { $0.type.name.capitalizingFirstLetter() }.joined(separator: ", ") ?? "")")
             attributedTypeString.append(typeString)
             self.typeLabel.attributedText = attributedTypeString
             

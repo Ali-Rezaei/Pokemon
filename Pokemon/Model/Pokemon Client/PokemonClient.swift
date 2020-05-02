@@ -19,12 +19,11 @@ class PokemonClient {
         
         var stringValue: String {
             switch self {
-                case .getPokemonList: return Endpoints.base + "/pokemon" + "?limit=\(151)"
+            case .getPokemonList: return Endpoints.base + "/pokemon" + "?limit=\(151)"
                 
-                case .getPokemonDetails(let id): return Endpoints.base + "/pokemon" + "/\(id)"
+            case .getPokemonDetails(let id): return Endpoints.base + "/pokemon" + "/\(id)"
                 
-            case .getPokemonSpecies(let id): return Endpoints.base +
-                "/pokemon-species" + "/\(id)"
+            case .getPokemonSpecies(let id): return Endpoints.base + "/pokemon-species" + "/\(id)"
             }
         }
         
