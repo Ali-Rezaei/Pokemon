@@ -28,47 +28,24 @@ class DetailViewController: UIViewController {
         
         let group = DispatchGroup()
         
-        let attrs = [NSAttributedString.Key.font : UIFont.boldSystemFont(ofSize: 17)]
-        
         group.enter()
         PokemonClient.getPokemonDetails(id: pokemon.id) { pokemonDetails, error in
             if let path = pokemonDetails?.sprites.urlFront {
                 PokemonClient.downloadImage(path: path) { data, error in
-                    guard let data = data else {
-                        return
-                    }
-                    let image = UIImage(data: data)
-                    self.frontImage.image = image
+                    self.frontImage.image = self.getImage(data: data)
                 }
             }
             if let path = pokemonDetails?.sprites.urlBack {
                 PokemonClient.downloadImage(path: path) { data, error in
-                    guard let data = data else {
-                        return
-                    }
-                    let image = UIImage(data: data)
-                    self.backImage.image = image
+                    self.backImage.image = self.getImage(data: data)
                 }
             }
             
-            let boldHeightText = "Height:"
-            let attributedHeightString = NSMutableAttributedString(string:boldHeightText, attributes:attrs)
-            let heightString = NSMutableAttributedString(string:"\t \(String(pokemonDetails!.height)) decimetres")
-            attributedHeightString.append(heightString)
-            self.heightLabel.attributedText = attributedHeightString
+            self.heightLabel.attributedText = self.getAttributedString(boldText: "Height:", myString: "\t \(String(pokemonDetails!.height)) decimetres")
             
+            self.weightLabel.attributedText = self.getAttributedString(boldText: "Weight:", myString: "\t \(String(pokemonDetails!.weight)) hectograms")
             
-            let boldWeightText = "Weight:"
-            let attributedWeightString = NSMutableAttributedString(string:boldWeightText, attributes:attrs)
-            let weightString = NSMutableAttributedString(string:"\t \(String(pokemonDetails!.weight)) hectograms")
-            attributedWeightString.append(weightString)
-            self.weightLabel.attributedText = attributedWeightString
-            
-            let boldTypeText = "Type:"
-            let attributedTypeString = NSMutableAttributedString(string:boldTypeText, attributes:attrs)
-            let typeString = NSMutableAttributedString(string:"\t \(pokemonDetails?.types.map { $0.type.name.capitalizingFirstLetter() }.joined(separator: ", ") ?? "")")
-            attributedTypeString.append(typeString)
-            self.typeLabel.attributedText = attributedTypeString
+            self.typeLabel.attributedText = self.getAttributedString(boldText: "Type:", myString: "\t \(pokemonDetails?.types.map { $0.type.name.capitalizingFirstLetter() }.joined(separator: ", ") ?? "")")
             
             group.leave()
         }
@@ -77,11 +54,7 @@ class DetailViewController: UIViewController {
         PokemonClient.getPokemonSpecies(id: pokemon.id) { species, error in
             if let genus = species?.genera.filter({ $0.language.name == "en"}).map({ $0.genus })[0] {
                 
-                let boldSpeciesText = "Species:"
-                let attributedSpeciesString = NSMutableAttributedString(string:boldSpeciesText, attributes:attrs)
-                let speciesString = NSMutableAttributedString(string:"\t \(genus)")
-                attributedSpeciesString.append(speciesString)
-                self.speciesLabel.attributedText = attributedSpeciesString
+                self.speciesLabel.attributedText = self.getAttributedString(boldText: "Species:", myString: "\t \(genus)")
                 
                 group.leave()
             }
@@ -90,5 +63,21 @@ class DetailViewController: UIViewController {
             self.contentView.isHidden = false
             self.indicator.stopAnimating()
         }
+    }
+    
+    private func getAttributedString(boldText: String, myString: String) -> NSMutableAttributedString {
+        let attrs = [NSAttributedString.Key.font : UIFont.boldSystemFont(ofSize: 17)]
+        let attributedString = NSMutableAttributedString(string:boldText, attributes:attrs)
+        let speciesString = NSMutableAttributedString(string:myString)
+        attributedString.append(speciesString)
+        return attributedString
+    }
+    
+    private func getImage(data : Data?) -> UIImage? {
+        guard let data = data else {
+            return nil
+        }
+        let image = UIImage(data: data)
+        return image
     }
 }
