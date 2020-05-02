@@ -34,13 +34,13 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ebv-dW-cwd">
-                                                    <rect key="frame" x="20" y="30" width="0.0" height="0.0"/>
+                                                    <rect key="frame" x="20" y="22" width="0.0" height="0.0"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UwY-0i-2gC">
-                                                    <rect key="frame" x="56" y="30" width="0.0" height="0.0"/>
+                                                    <rect key="frame" x="56" y="22" width="0.0" height="0.0"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -95,9 +95,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="utL-7a-w36">
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="utL-7a-w36">
                                 <rect key="frame" x="188" y="429" width="37" height="37"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="color" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </activityIndicatorView>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vn8-dx-CYu">
@@ -183,10 +182,12 @@
                         <constraints>
                             <constraint firstItem="C2y-75-dWW" firstAttribute="height" secondItem="0L0-Pe-kUg" secondAttribute="height" id="8wq-zG-NcR"/>
                             <constraint firstItem="vn8-dx-CYu" firstAttribute="bottom" secondItem="TQP-0N-v91" secondAttribute="bottom" id="NwM-su-qRG"/>
+                            <constraint firstItem="utL-7a-w36" firstAttribute="centerY" secondItem="TQP-0N-v91" secondAttribute="centerY" id="T0q-Qc-kIy"/>
                             <constraint firstItem="C2y-75-dWW" firstAttribute="width" secondItem="0L0-Pe-kUg" secondAttribute="width" id="Tut-cT-0jV"/>
                             <constraint firstItem="vn8-dx-CYu" firstAttribute="trailing" secondItem="TQP-0N-v91" secondAttribute="trailing" id="bqK-N9-R70"/>
                             <constraint firstItem="vn8-dx-CYu" firstAttribute="leading" secondItem="TQP-0N-v91" secondAttribute="leading" id="kKj-ub-B42"/>
                             <constraint firstItem="vn8-dx-CYu" firstAttribute="top" secondItem="TQP-0N-v91" secondAttribute="top" id="qJr-gD-Qsk"/>
+                            <constraint firstItem="utL-7a-w36" firstAttribute="centerX" secondItem="TQP-0N-v91" secondAttribute="centerX" id="wQQ-C3-ziZ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="TQP-0N-v91"/>
                     </view>

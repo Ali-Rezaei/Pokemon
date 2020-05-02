@@ -82,6 +82,7 @@ class DetailViewController: UIViewController {
                 let speciesString = NSMutableAttributedString(string:"\t \(genus)")
                 attributedSpeciesString.append(speciesString)
                 self.speciesLabel.attributedText = attributedSpeciesString
+                
                 group.leave()
             }
         }
