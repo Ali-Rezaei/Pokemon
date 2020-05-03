@@ -112,10 +112,10 @@
 		41208BC82459FB4300681F1E /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				41208BDB245A0D9E00681F1E /* Extentions */,
 				41208BC92459FB4F00681F1E /* Data */,
 				41208BDE245A11B400681F1E /* Pokemon Client */,
 				41208BCA2459FB9A00681F1E /* Pokemon Responses */,
+				41208BDB245A0D9E00681F1E /* Extentions */,
 			);
 			path = Model;
 			sourceTree = "<group>";

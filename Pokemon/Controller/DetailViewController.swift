@@ -68,8 +68,8 @@ class DetailViewController: UIViewController {
     private func getAttributedString(boldText: String, myString: String) -> NSMutableAttributedString {
         let attrs = [NSAttributedString.Key.font : UIFont.boldSystemFont(ofSize: 17)]
         let attributedString = NSMutableAttributedString(string:boldText, attributes:attrs)
-        let textString = NSMutableAttributedString(string:myString)
-        attributedString.append(textString)
+        let normalText = NSMutableAttributedString(string:myString)
+        attributedString.append(normalText)
         return attributedString
     }
     
