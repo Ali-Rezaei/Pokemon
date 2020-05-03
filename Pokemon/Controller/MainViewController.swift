@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  MainViewController.swift
 //  Pokemon
 //
 //  Created by Ali Rezaei on 2020-04-29.
