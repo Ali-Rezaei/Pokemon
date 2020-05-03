@@ -85,7 +85,6 @@
 				41208BC82459FB4300681F1E /* Model */,
 				41208BE5245CA04200681F1E /* View */,
 				41208BC62459F70900681F1E /* Controller */,
-				41208BDB245A0D9E00681F1E /* Extentions */,
 				41208BC72459F72800681F1E /* Assets */,
 			);
 			path = Pokemon;
@@ -113,6 +112,7 @@
 		41208BC82459FB4300681F1E /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				41208BDB245A0D9E00681F1E /* Extentions */,
 				41208BC92459FB4F00681F1E /* Data */,
 				41208BDE245A11B400681F1E /* Pokemon Client */,
 				41208BCA2459FB9A00681F1E /* Pokemon Responses */,

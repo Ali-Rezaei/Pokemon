@@ -24,7 +24,7 @@ class DetailViewController: UIViewController {
     
     override func viewDidLoad() {
         
-        nameLabel.text = "#\(pokemon.id)\t \(pokemon.name)"
+       nameLabel.text = "#\(pokemon.id)\t \(pokemon.name)"
         
         let group = DispatchGroup()
         
@@ -42,9 +42,9 @@ class DetailViewController: UIViewController {
             }
             
             self.heightLabel.attributedText = self.getAttributedString(boldText: "Height:", myString: "\t \(String(pokemonDetails!.height)) decimetres")
-            
+
             self.weightLabel.attributedText = self.getAttributedString(boldText: "Weight:", myString: "\t \(String(pokemonDetails!.weight)) hectograms")
-            
+
             self.typeLabel.attributedText = self.getAttributedString(boldText: "Type:", myString: "\t \(pokemonDetails?.types.map { $0.type.name.capitalizingFirstLetter() }.joined(separator: ", ") ?? "")")
             
             group.leave()
@@ -68,8 +68,8 @@ class DetailViewController: UIViewController {
     private func getAttributedString(boldText: String, myString: String) -> NSMutableAttributedString {
         let attrs = [NSAttributedString.Key.font : UIFont.boldSystemFont(ofSize: 17)]
         let attributedString = NSMutableAttributedString(string:boldText, attributes:attrs)
-        let speciesString = NSMutableAttributedString(string:myString)
-        attributedString.append(speciesString)
+        let textString = NSMutableAttributedString(string:myString)
+        attributedString.append(textString)
         return attributedString
     }
     
