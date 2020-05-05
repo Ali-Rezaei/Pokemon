@@ -85,6 +85,7 @@
 				41208BC82459FB4300681F1E /* Model */,
 				41208BE5245CA04200681F1E /* View */,
 				41208BC62459F70900681F1E /* Controller */,
+				41EDAE682461A99A006AA83B /* Storyboards */,
 				41208BC72459F72800681F1E /* Assets */,
 			);
 			path = Pokemon;
@@ -102,9 +103,7 @@
 		41208BC72459F72800681F1E /* Assets */ = {
 			isa = PBXGroup;
 			children = (
-				41208BB62459F57E00681F1E /* Main.storyboard */,
 				41208BB92459F57F00681F1E /* Assets.xcassets */,
-				41208BBB2459F57F00681F1E /* LaunchScreen.storyboard */,
 			);
 			path = Assets;
 			sourceTree = "<group>";
@@ -165,6 +164,15 @@
 				41208BE6245CA08B00681F1E /* PokemonCell.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		41EDAE682461A99A006AA83B /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				41208BB62459F57E00681F1E /* Main.storyboard */,
+				41208BBB2459F57F00681F1E /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
