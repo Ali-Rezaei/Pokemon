@@ -19,8 +19,10 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var backImage: UIImageView!
     @IBOutlet weak var contentView: UIView!
     @IBOutlet weak var indicator: UIActivityIndicatorView!
+    @IBOutlet weak var errorView: UILabel!
     
     var pokemon: Pokemon!
+    var caseError:Error?
     
     override func viewDidLoad() {
         
@@ -30,6 +32,11 @@ class DetailViewController: UIViewController {
         
         group.enter()
         PokemonClient.getPokemonDetails(id: pokemon.id) { pokemonDetails, error in
+            group.leave()
+            if let _ = error {
+                self.caseError = error
+                return
+            }
             if let path = pokemonDetails?.sprites.urlFront {
                 PokemonClient.downloadImage(path: path) { data, error in
                     self.frontImage.image = Helper.getImage(data: data)
@@ -44,20 +51,27 @@ class DetailViewController: UIViewController {
             self.heightLabel.attributedText = Helper.getAttributedString(boldText: "Height:", myString: "\t \(String(pokemonDetails!.height)) decimetres")
             self.weightLabel.attributedText = Helper.getAttributedString(boldText: "Weight:", myString: "\t \(String(pokemonDetails!.weight)) hectograms")
             self.typeLabel.attributedText = Helper.getAttributedString(boldText: "Type:", myString: "\t \(pokemonDetails?.types.map { $0.type.name.capitalizingFirstLetter() }.joined(separator: ", ") ?? "")")
-            group.leave()
         }
         
         group.enter()
         PokemonClient.getPokemonSpecies(id: pokemon.id) { species, error in
+            group.leave()
+            if let _ = error {
+                self.caseError = error
+                return
+            }
             if let genus = species?.genera.filter({ $0.language.name == "en"}).map({ $0.genus })[0] {
                 
                 self.speciesLabel.attributedText = Helper.getAttributedString(boldText: "Species:", myString: "\t \(genus)")
             }
-            group.leave()
         }
         group.notify(queue: .main) {
-            self.contentView.isHidden = false
             self.indicator.stopAnimating()
+            if(self.caseError == nil) {
+                self.contentView.isHidden = false
+            } else {
+                self.errorView.isHidden = false
+            }
         }
     }
 }

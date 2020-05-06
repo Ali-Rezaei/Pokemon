@@ -12,6 +12,7 @@ class MainViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var indicator: UIActivityIndicatorView!
+    @IBOutlet weak var errorView: UILabel!
     
     var selectedIndex = 0
     
@@ -20,9 +21,13 @@ class MainViewController: UIViewController {
         
         PokemonClient.getPokemonList() { pokemons, error in
             self.indicator.stopAnimating()
-            PokemonModel.pokemonList = pokemons
-            self.tableView.isHidden = false
-            self.tableView.reloadData()
+            if let _ = error {
+               self.errorView.isHidden = false
+            } else {
+                PokemonModel.pokemonList = pokemons
+                self.tableView.isHidden = false
+                self.tableView.reloadData()
+            }
         }
     }
     

@@ -18,12 +18,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Something went wrong ..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mzL-Hj-8hz" userLabel="Error Label">
+                                <rect key="frame" x="96" y="437" width="226" height="57"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="x0t-Pk-miY" userLabel="indicator">
                                 <rect key="frame" x="188.5" y="456.5" width="37" height="37"/>
                                 <color key="color" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </activityIndicatorView>
-                            <tableView hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Zkl-Ef-7Gq">
-                                <rect key="frame" x="0.0" y="88" width="414" height="808"/>
+                            <tableView hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Zkl-Ef-7Gq">
+                                <rect key="frame" x="0.0" y="54" width="414" height="808"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PokemonCell" id="2A5-MR-OkQ" userLabel="PokemonCell" customClass="PokemonCell" customModule="Pokemon" customModuleProvider="target">
@@ -72,12 +78,15 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Zkl-Ef-7Gq" secondAttribute="trailing" id="Fuy-uz-cFQ"/>
                             <constraint firstItem="Zkl-Ef-7Gq" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="PSS-3w-6bV"/>
                             <constraint firstItem="x0t-Pk-miY" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="TaT-ho-AaI"/>
+                            <constraint firstItem="mzL-Hj-8hz" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="Wqj-BS-Dfq"/>
+                            <constraint firstItem="mzL-Hj-8hz" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="kcP-QY-fnF"/>
                             <constraint firstItem="Zkl-Ef-7Gq" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" constant="34" id="vno-iB-dia"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="6Lo-1U-UuN"/>
                     <connections>
+                        <outlet property="errorView" destination="mzL-Hj-8hz" id="vY8-XZ-FSL"/>
                         <outlet property="indicator" destination="x0t-Pk-miY" id="BBP-xm-v0W"/>
                         <outlet property="tableView" destination="Zkl-Ef-7Gq" id="Pfa-GG-Vy9"/>
                         <segue destination="kXe-Vu-R6g" kind="show" identifier="showDetail" id="L5A-4V-nDD"/>
@@ -99,6 +108,12 @@
                                 <rect key="frame" x="188" y="429" width="37" height="37"/>
                                 <color key="color" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </activityIndicatorView>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Something went wrong ..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Tw-m6-YFj" userLabel="Error Label">
+                                <rect key="frame" x="186" y="437" width="195" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JbS-nN-cjW">
                                 <rect key="frame" x="0.0" y="88" width="414" height="808"/>
                                 <subviews>
@@ -181,8 +196,10 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="JbS-nN-cjW" firstAttribute="bottom" secondItem="TQP-0N-v91" secondAttribute="bottom" constant="34" id="3x9-Zq-frn"/>
+                            <constraint firstItem="2Tw-m6-YFj" firstAttribute="centerY" secondItem="TQP-0N-v91" secondAttribute="centerY" id="Gvc-s2-yVR"/>
                             <constraint firstItem="utL-7a-w36" firstAttribute="centerY" secondItem="TQP-0N-v91" secondAttribute="centerY" id="T0q-Qc-kIy"/>
                             <constraint firstItem="TQP-0N-v91" firstAttribute="trailing" secondItem="JbS-nN-cjW" secondAttribute="trailing" id="iMv-fr-vQ2"/>
+                            <constraint firstItem="2Tw-m6-YFj" firstAttribute="centerX" secondItem="TQP-0N-v91" secondAttribute="centerX" id="jG6-Cc-6iQ"/>
                             <constraint firstItem="JbS-nN-cjW" firstAttribute="leading" secondItem="TQP-0N-v91" secondAttribute="leading" id="uOL-GV-vlq"/>
                             <constraint firstItem="utL-7a-w36" firstAttribute="centerX" secondItem="TQP-0N-v91" secondAttribute="centerX" id="wQQ-C3-ziZ"/>
                             <constraint firstItem="JbS-nN-cjW" firstAttribute="top" secondItem="TQP-0N-v91" secondAttribute="top" id="zXz-SS-Ur5"/>
@@ -192,6 +209,7 @@
                     <connections>
                         <outlet property="backImage" destination="qsU-SI-3V7" id="JqW-YK-0S7"/>
                         <outlet property="contentView" destination="pcj-ik-3W1" id="DsI-E9-DkY"/>
+                        <outlet property="errorView" destination="2Tw-m6-YFj" id="UAN-it-Llv"/>
                         <outlet property="frontImage" destination="woz-mx-0js" id="Oic-wc-dIK"/>
                         <outlet property="heightLabel" destination="da9-Rs-ixl" id="wMr-PA-Bd8"/>
                         <outlet property="indicator" destination="utL-7a-w36" id="F3L-PC-z3N"/>
