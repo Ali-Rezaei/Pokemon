@@ -25,6 +25,7 @@
 		41208BE2245A169200681F1E /* PokemonModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41208BE1245A169200681F1E /* PokemonModel.swift */; };
 		41208BE4245AF29600681F1E /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41208BE3245AF29600681F1E /* DetailViewController.swift */; };
 		41208BE7245CA08B00681F1E /* PokemonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41208BE6245CA08B00681F1E /* PokemonCell.swift */; };
+		41EDAE6A2462EEF3006AA83B /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41EDAE692462EEF3006AA83B /* Helper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +49,7 @@
 		41208BE1245A169200681F1E /* PokemonModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonModel.swift; sourceTree = "<group>"; };
 		41208BE3245AF29600681F1E /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		41208BE6245CA08B00681F1E /* PokemonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonCell.swift; sourceTree = "<group>"; };
+		41EDAE692462EEF3006AA83B /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +117,7 @@
 				41208BDE245A11B400681F1E /* Pokemon Client */,
 				41208BCA2459FB9A00681F1E /* Pokemon Responses */,
 				41208BDB245A0D9E00681F1E /* Extentions */,
+				41EDAE692462EEF3006AA83B /* Helper.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -253,6 +256,7 @@
 				41208BD42459FFB000681F1E /* PokemonTypeModel.swift in Sources */,
 				41208BD02459FF2600681F1E /* GenusResponseModel.swift in Sources */,
 				41208BE7245CA08B00681F1E /* PokemonCell.swift in Sources */,
+				41EDAE6A2462EEF3006AA83B /* Helper.swift in Sources */,
 				41208BB52459F57E00681F1E /* MainViewController.swift in Sources */,
 				41208BE0245A11E400681F1E /* PokemonClient.swift in Sources */,
 				41208BDA245A03C900681F1E /* Pokemon.swift in Sources */,

@@ -19,10 +19,10 @@ class MainViewController: UIViewController {
         super.viewDidLoad()
         
         PokemonClient.getPokemonList() { pokemons, error in
+            self.indicator.stopAnimating()
             PokemonModel.pokemonList = pokemons
             self.tableView.isHidden = false
             self.tableView.reloadData()
-            self.indicator.stopAnimating()
         }
     }
     
