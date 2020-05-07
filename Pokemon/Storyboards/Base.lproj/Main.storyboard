@@ -4,7 +4,6 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -80,7 +79,7 @@
                             <constraint firstItem="x0t-Pk-miY" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="TaT-ho-AaI"/>
                             <constraint firstItem="mzL-Hj-8hz" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="Wqj-BS-Dfq"/>
                             <constraint firstItem="mzL-Hj-8hz" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="kcP-QY-fnF"/>
-                            <constraint firstItem="Zkl-Ef-7Gq" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" constant="34" id="vno-iB-dia"/>
+                            <constraint firstItem="Zkl-Ef-7Gq" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="vno-iB-dia"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
