@@ -48,8 +48,8 @@ class DetailViewController: UIViewController {
                 }
             }
             
-            self.heightLabel.attributedText = Helper.getAttributedString(boldText: "Height:", myString: "\t \(String(describing: pokemonDetails?.height)) decimetres")
-            self.weightLabel.attributedText = Helper.getAttributedString(boldText: "Weight:", myString: "\t \(String(describing: pokemonDetails?.weight)) hectograms")
+            self.heightLabel.attributedText = Helper.getAttributedString(boldText: "Height:", myString: "\t \(pokemonDetails!.height) decimetres")
+            self.weightLabel.attributedText = Helper.getAttributedString(boldText: "Weight:", myString: "\t \(pokemonDetails!.weight) hectograms")
             self.typeLabel.attributedText = Helper.getAttributedString(boldText: "Type:", myString: "\t \(pokemonDetails?.types.map { $0.type.name.capitalizingFirstLetter() }.joined(separator: ", ") ?? "")")
         }
         
@@ -61,7 +61,6 @@ class DetailViewController: UIViewController {
                 return
             }
             if let genus = species?.genera.filter({ $0.language.name == "en"}).map({ $0.genus })[0] {
-                
                 self.speciesLabel.attributedText = Helper.getAttributedString(boldText: "Species:", myString: "\t \(genus)")
             }
         }
