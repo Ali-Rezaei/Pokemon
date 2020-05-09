@@ -48,8 +48,12 @@ class DetailViewController: UIViewController {
                 }
             }
             
-            self.heightLabel.attributedText = Helper.getAttributedString(boldText: "Height:", myString: "\t \(pokemonDetails!.height) decimetres")
-            self.weightLabel.attributedText = Helper.getAttributedString(boldText: "Weight:", myString: "\t \(pokemonDetails!.weight) hectograms")
+            if let height = pokemonDetails?.height {
+                self.heightLabel.attributedText = Helper.getAttributedString(boldText: "Height:", myString: "\t \(height) decimetres")
+            }
+            if let weight = pokemonDetails?.weight {
+                self.weightLabel.attributedText = Helper.getAttributedString(boldText: "Weight:", myString: "\t \(weight) hectograms")
+            }
             self.typeLabel.attributedText = Helper.getAttributedString(boldText: "Type:", myString: "\t \(pokemonDetails?.types.map { $0.type.name.capitalizingFirstLetter() }.joined(separator: ", ") ?? "")")
         }
         
