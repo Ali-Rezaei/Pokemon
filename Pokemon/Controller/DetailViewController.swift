@@ -54,7 +54,7 @@ class DetailViewController: UIViewController {
             if let weight = pokemonDetails?.weight {
                 self.weightLabel.attributedText = Helper.getAttributedString(boldText: "Weight:", myString: "\t \(weight) hectograms")
             }
-            self.typeLabel.attributedText = Helper.getAttributedString(boldText: "Type:", myString: "\t \(pokemonDetails?.types.map { $0.type.name.capitalizingFirstLetter() }.joined(separator: ", ") ?? "")")
+            self.typeLabel.attributedText = Helper.getAttributedString(boldText: "Type:", myString: "\t \(pokemonDetails?.types.sorted { $0.slot < $1.slot }.map { $0.type.name.capitalizingFirstLetter() }.joined(separator: ", ") ?? "")")
         }
         
         group.enter()
